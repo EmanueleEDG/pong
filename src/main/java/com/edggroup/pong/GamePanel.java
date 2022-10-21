@@ -167,13 +167,11 @@ public class GamePanel extends JPanel implements Runnable {
 	public void run() {
 		//game loop
 		long lastTime = System.nanoTime();
-		System.out.println(lastTime);
 		double amountOfTicks = 60.0;
 		double ns = 1000000000 / amountOfTicks;
 		double delta = 0;
 		while (true) {
 			long now = System.nanoTime();
-			System.out.println(now);
 			delta += (now - lastTime) / ns;
 			lastTime = now;
 			if (delta >= 1) {
