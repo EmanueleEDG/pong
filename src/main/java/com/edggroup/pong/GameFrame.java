@@ -1,17 +1,13 @@
-
 package com.edggroup.pong;
 
-import java.awt.*;
-import java.awt.event.*;
-import java.util.*;
 import javax.swing.*;
 
 public class GameFrame extends JFrame {
 
 	public GameFrame() {
-		
+
 		initComponents();
-		
+
 //		panel = new com.edggroup.pong.GamePanel();
 //		
 //		this.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -21,12 +17,15 @@ public class GameFrame extends JFrame {
 //		this.setResizable(false);
 //		
 //		this.add(panel);
-
+		
 		panel.setFocusable(true);
+		setContentPane(panel);
 		panel.grabFocus();
 		
-		this.pack();
+		this.setFocusTraversalKeysEnabled(false);
 		
+		this.pack();
+
 		this.setLocationRelativeTo(null);
 		this.setVisible(true);
 	}
@@ -41,6 +40,7 @@ public class GameFrame extends JFrame {
     setTitle("Pong Game");
     setBackground(new java.awt.Color(0, 0, 0));
     setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+    setLocationByPlatform(true);
     setName("frame"); // NOI18N
     setResizable(false);
 

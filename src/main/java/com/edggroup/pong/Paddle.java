@@ -2,13 +2,7 @@ package com.edggroup.pong;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.util.*;
-import javax.swing.*;
 
-/**
- *
- * @author tirocinio3
- */
 public class Paddle extends Rectangle{
 	
 	int id;

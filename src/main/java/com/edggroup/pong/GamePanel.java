@@ -13,6 +13,8 @@ public class GamePanel extends JPanel implements Runnable {
 	static final int BALL_DIAMETER = 20;
 	static final int PADDLE_WIDTH = 25;
 	static final int PADDLE_HEIGHT = 100;
+	
+	
 	Thread gameThread;
 	Image image;
 	Graphics graphics;
@@ -26,10 +28,11 @@ public class GamePanel extends JPanel implements Runnable {
 		newPaddles();
 		newBall();
 		score = new Score(GAME_WIDTH, GAME_HEIGHT);
+		
+		//getInputMap().put(KeyStroke.getKeyStroke("SPACE"), "pressed");
 
 		this.addKeyListener(new AL());
-		this.setFocusable(true);
-		this.requestFocusInWindow();
+		
 		this.setPreferredSize(SCREEN_SIZE);
 
 		initComponents();
@@ -152,6 +155,7 @@ public class GamePanel extends JPanel implements Runnable {
 	}
 	
 	public class AL extends KeyAdapter {
+		
 		public void KeyPressed(KeyEvent e) {
 			System.out.println("Pressed");
 			paddle1.KeyPressed(e);
