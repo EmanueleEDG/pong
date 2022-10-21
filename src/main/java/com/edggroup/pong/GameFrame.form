@@ -14,8 +14,7 @@
     <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
-    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
-    <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
+    <SyntheticProperty name="formSizePolicy" type="int" value="2"/>
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -51,7 +50,6 @@
   <SubComponents>
     <Container class="com.edggroup.pong.GamePanel" name="panel">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="add(panel);"/>
         <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="GameFrame_panel"/>
       </AuxValues>
 

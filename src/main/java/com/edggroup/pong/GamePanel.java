@@ -28,6 +28,8 @@ public class GamePanel extends JPanel implements Runnable {
 		score = new Score(GAME_WIDTH, GAME_HEIGHT);
 
 		this.addKeyListener(new AL());
+		this.setFocusable(true);
+		this.requestFocusInWindow();
 		this.setPreferredSize(SCREEN_SIZE);
 
 		initComponents();
@@ -37,8 +39,8 @@ public class GamePanel extends JPanel implements Runnable {
 	}
 
 	public void newBall() {
-		//random = new Random();
-		ball = new Ball((GAME_WIDTH / 2) - (BALL_DIAMETER / 2), (GAME_HEIGHT / 2) - (BALL_DIAMETER / 2), BALL_DIAMETER, BALL_DIAMETER);
+		random = new Random();
+		ball = new Ball((GAME_WIDTH / 2) - (BALL_DIAMETER / 2), random.nextInt(GAME_HEIGHT-BALL_DIAMETER), BALL_DIAMETER, BALL_DIAMETER);
 	}
 
 	public void newPaddles() {
@@ -57,6 +59,7 @@ public class GamePanel extends JPanel implements Runnable {
 		paddle1.draw(g);
 		paddle2.draw(g);
 		ball.draw(g);
+		score.draw(g);
 	}
 
 	public void move() {
@@ -172,11 +175,11 @@ public class GamePanel extends JPanel implements Runnable {
     this.setLayout(layout);
     layout.setHorizontalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 515, Short.MAX_VALUE)
+      .addGap(0, 1032, Short.MAX_VALUE)
     );
     layout.setVerticalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 367, Short.MAX_VALUE)
+      .addGap(0, 496, Short.MAX_VALUE)
     );
 
     getAccessibleContext().setAccessibleName("panel");

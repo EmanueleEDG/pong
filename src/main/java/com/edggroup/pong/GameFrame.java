@@ -1,4 +1,4 @@
-//https://www.youtube.com/watch?v=oLirZqJFKPE
+
 package com.edggroup.pong;
 
 import java.awt.*;
@@ -7,9 +7,27 @@ import java.util.*;
 import javax.swing.*;
 
 public class GameFrame extends JFrame {
- 	
+
 	public GameFrame() {
+		
 		initComponents();
+		
+//		panel = new com.edggroup.pong.GamePanel();
+//		
+//		this.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+//		this.setTitle("Pong Game");
+//		this.setBackground(new java.awt.Color(0, 0, 0));
+//		this.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+//		this.setResizable(false);
+//		
+//		this.add(panel);
+
+		panel.setFocusable(true);
+		panel.grabFocus();
+		
+		this.pack();
+		
+		this.setLocationRelativeTo(null);
 		this.setVisible(true);
 	}
 
@@ -25,8 +43,6 @@ public class GameFrame extends JFrame {
     setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
     setName("frame"); // NOI18N
     setResizable(false);
-
-    add(panel);
 
     javax.swing.GroupLayout panelLayout = new javax.swing.GroupLayout(panel);
     panel.setLayout(panelLayout);
@@ -54,12 +70,8 @@ public class GameFrame extends JFrame {
         .addComponent(panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addGap(0, 12, Short.MAX_VALUE))
     );
-
-    pack();
-    setLocationRelativeTo(null);
   }// </editor-fold>//GEN-END:initComponents
 
-	
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
   private com.edggroup.pong.GamePanel panel;
