@@ -44,5 +44,4 @@ public class Ball extends Rectangle {
 		g.setColor(Color.white);
 		g.fillOval(x, y, width, height);
 	}
-	 
 }
