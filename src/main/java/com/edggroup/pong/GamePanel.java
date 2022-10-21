@@ -29,9 +29,40 @@ public class GamePanel extends JPanel implements Runnable {
 		newBall();
 		score = new Score(GAME_WIDTH, GAME_HEIGHT);
 		
-		//getInputMap().put(KeyStroke.getKeyStroke("SPACE"), "pressed");
-
-		this.addKeyListener(new AL());
+		this.getInputMap().put(KeyStroke.getKeyStroke("W"), "pressed_W");
+		this.getActionMap().put("pressed_W", new AbstractAction() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				paddle1.setYDirection(-10);
+				paddle1.move();
+			}
+		} );
+		this.getInputMap().put(KeyStroke.getKeyStroke("S"), "pressed_S");
+		this.getActionMap().put("pressed_S", new AbstractAction() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				paddle1.setYDirection(10);
+				paddle1.move();
+			}
+		} );
+		
+		this.getInputMap().put(KeyStroke.getKeyStroke("UP"), "pressed_UP");
+		this.getActionMap().put("pressed_UP", new AbstractAction() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				paddle2.setYDirection(-10);
+				paddle2.move();
+			}
+		} );
+		this.getInputMap().put(KeyStroke.getKeyStroke("DOWN"), "pressed_DOWN");
+		this.getActionMap().put("pressed_DOWN", new AbstractAction() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				paddle2.setYDirection(10);
+				paddle2.move();
+			}
+		} );
+		//this.addKeyListener(new AL());
 		
 		this.setPreferredSize(SCREEN_SIZE);
 
